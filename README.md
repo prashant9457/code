@@ -1,26 +1,22 @@
-#include <stdio.h>
+#include<stdio.h>
 int main() {
-int temp;
-printf("enter the size of array");
-scanf("%d" ,&temp);
-int arr[temp];
-for (int i=0; i<temp; i++) {
-  printf("enter the element number %d", i+1);
-  scanf("%d", &arr[i]);
+	int n;
+	printf("enter the size of array");
+	scanf("%d" ,&n);
+	int arr[n];
+	for (int i=0; i<n; i++) {
+  		printf("nenter the element number %d", i+1);
+  		scanf("%d", &arr[i]);
 }
-for (int i = 0; i < temp - 1; i++) {
-        for (int j = 0; j < temp - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                // Swap the elements
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
+	for (int i = 0; i < n / 2; i++) {
+        // Swap the elements
+        int temp = arr[i];
+        arr[i] = arr[n - i - 1];
+        arr[n - i - 1] = temp;
     }
-  printf("sorted array is\n");
-  for (int i=0; i<temp; i++) {
-  printf("%d ", arr[i]);
+    printf("reversed array is\n");
+  	for (int i=0; i<n; i++) {
+  		printf("%d ", arr[i]);
+	}
+	return 0;
 }
-    return 0;
-  }
